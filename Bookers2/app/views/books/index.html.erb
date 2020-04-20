@@ -1,13 +1,30 @@
   <div class="container">
   <div class="row">
   <div class="col-sm-3 sidenav">
+    <h2>User info</h2>
+<%= attachment_image_tag @user, :profile_image %>
+<img class="attachment user profile_image" src="画像" alt="Profile image">
+<table class="table">
+      <tbody><tr></tr>
+      <tr>
+        <th>name</th>
+        <th>※ここに表示</th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th>※text表示させる</th>
+      </tr>
+</tbody></table>
+<div class="row">
+  <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench " href="edit_user_path"></a>
+</div>
   <h2>New Book</h2>
   <%= form_for(@book) do |f| %>
      <h4>Title</h4>
      <%= f.text_field :title %>
 
      <h4>Opinion</h4>
-     <%= f.text_field :opinion %><br>
+     <%= f.text_field :opinion %><br><br>
 
      <%#
      <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">%>

@@ -16,9 +16,12 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params) #表示された投稿を保存
     @book.user_id = current_user.id
-    @book.save
-    redirect_to book_path(@book.id)
+   if @book.save
+    redirect_to "/books" #book_path(@book.id)だとエラー出るため一旦booksへリダイレクト
+   else
+    render "edit" #失敗の場合,なぜかbooksだとエラーになるため一旦edit
   end
+end
 
   def edit
    @book = Book.find(params[:id]) #既存のレコードを取得している。updateで動く
@@ -28,8 +31,9 @@ class BooksController < ApplicationController
   def book_params
    params.require(:book).permit(:title, :opinion, :user_id)
   end
+end
 
  #def  create_params
   #params.require(:book).permit(:title, :opinion
 #end
-end
+
