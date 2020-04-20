@@ -69,3 +69,4 @@ gem "refile-mini_magick" #アップロードした画像のリサイズができ
 gem 'bootstrap-sass', '~> 3.3.6' #bootstrap
 gem 'jquery-rails'
 
+gem 'pry-rails'
