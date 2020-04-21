@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :books
   resources :users, only: [:show, :edit, :update] #変更結果を保存できるようにする
-  resources :post_images, only: [:new, :create, :index, :show]
 
   #devise_for :installs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
