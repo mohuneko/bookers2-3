@@ -10,5 +10,6 @@ class User < ApplicationRecord
   #mount_uploader :image, ImageUploader　#画像up
 
   validates :name, length: { in: 2..20 }, presence: true  #Userモデルのユーザー名は2〜20文字までに
+  validates :introduction, length: { maximum: 50 } #Userモデルの自己紹介文は50文字まで
 
 end

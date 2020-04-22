@@ -4,7 +4,7 @@
 
     <h2>User info</h2>
 <!--<%= attachment_image_tag @user, :profile_image %>-->
-<%= attachment_image_tag current_user, :profile_image, size:'200x200'%>
+<%= attachment_image_tag current_user, :profile_image, size:'200x200' %>
 <table class="table">
       <tbody><tr></tr>
       <tr>
@@ -38,39 +38,8 @@
      <%= f.text_field :title %>
 
      <h4>Opinion</h4>
-     <%= f.text_area :opinion %><br><br>
+     <%= f.text_field :opinion %><br><br>
 
      <%= f.submit "Create Book", class: "btn btn-primary col-xs-12 field" %>
    </div>
   <% end %>
-
-  <div class="col-sm-9">
-    <h2>Books</h2>
-    <table class="table table-hover table-inverse">
-      <tr>
-        <th class="col-md-2 table-noborder"></th>
-        <th class="col-md-3 table-noborder">Title</th>
-        <th class="col-md-3 table-noborder">Opinion</th>
-        <th class="col-md-2 table-noborder"></th>
-        <th class="col-md-2 table-noborder"></th>
-      </tr>
-      <% @books.each do |book| %>
-        <tr>
-          <td>
-          <%= attachment_image_tag current_user, :profile_image, size:'50x50' %>
-          </td>
-          <td>
-          <%= link_to book_path(book.id)  do %>
-            <%= book.title %>
-          <% end %>
-          </td>
-          <td>
-            <%= book.opinion %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-    </div>
-  </div>
-  </div>
-</div>

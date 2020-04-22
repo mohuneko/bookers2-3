@@ -3,10 +3,12 @@ class BooksController < ApplicationController
 
 
   def show
+   @book = Book.find(params[:id])
+   @books = Book.all
+
   end
 
   def index
-
    @book = Book.new #投稿フォーム
    @books = Book.all #記事を全件取得
   end
@@ -29,13 +31,18 @@ end
    @book = Book.find(params[:id]) #既存のレコードを取得している。updateで動く
   end
 
+  def destroy
+   book = Book.find(params[:id])
+   book.destroy #削除
+   redirect_to books_path #booksへリダイレクト
+ end
+
+  def users
+  @books = Book.all
+  end
+
   private
   def book_params
    params.require(:book).permit(:title, :opinion, :user_id)
   end
 end
-
- #def  create_params
-  #params.require(:book).permit(:title, :opinion
-#end
-

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@post_images = @user.post_images.page(params[:page]).reverse_order
+
   end
 
   def new
@@ -21,7 +21,8 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
-
+  def index
+  end
 
  private
  def user_params
