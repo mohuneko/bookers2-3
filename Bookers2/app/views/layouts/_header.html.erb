@@ -6,17 +6,26 @@
    <nav>
     <ul class="nav navbar-nav navbar-right">
    <% if user_signed_in? %>　<!--ログインしているなら-->
-   　　　<li><a class="glyphicon glyphicon-home home" href="/books"> Home</a></li>
-        <li><a class="glyphicon glyphicon-user users" href="/users"> Users</a></li>
-        <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li>
-        <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
+        <li><%= link_to "Home", user_path(current_user), class:"glyphicon glyphicon-home home" %></li>
+   <!-- 　　　<li><a class="glyphicon glyphicon-home home" href="/books"> Home</a></li> -->
+        <li><%= link_to "Users", "/users", class:"glyphicon glyphicon-user users" %></li>
+        <!-- <li><a class="glyphicon glyphicon-user users" href="/users"> Users</a></li> -->
+        <!-- <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li> -->
+        <li><%= link_to "Books", "/books", class:"glyphicon glyphicon-book books" %></li>
+        <li><%= link_to "logout", "/users/sign_out",method: :delete,  class:"glyphicon glyphicon-log-out logout" %></li>
+        <!-- <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li> -->
     </ul>
   </nav>
+  <nav>
     <% else %>　<!--ログアウトしているなら-->
-    　　<li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
-       <li><a class="glyphicon glyphicon-link about" href="/"> About</a></li>
-       <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li>
-       <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a></li>
+    　　<li><%= link_to "Home", "/", class:"glyphicon glyphicon-home home" %></li>
+    <!-- 　　<li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li> -->
+       <li><%= link_to "About", "/", class:"glyphicon glyphicon-link about" %></li>
+       <!-- <li><a class="glyphicon glyphicon-link about" href="/"> About</a></li> -->
+       <li><%= link_to "sign up", "/users/sign_up", class:"glyphicon glyphicon-edit sign_up" %></li>
+       <!-- <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li> -->
+       <li><%= link_to "login", "/users/sign_in", class:"glyphicon glyphicon-log-in sign_in" %></li>
+       <!-- <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a></li> -->
      </ul>
    </nav>
    <% end %>

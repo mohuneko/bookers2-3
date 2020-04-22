@@ -1,19 +1,21 @@
-  <div class="container">
-  <div class="row">
-  <div class="col-sm-3 sidenav">
+
+  <div class="col-xs-3 sidenav">
+  <div id="success_explanation">
+  <p><%= flash[:message] %></p>
+  </div>
 
     <h2>User info</h2>
 <!--<%= attachment_image_tag @user, :profile_image %>-->
-<%= attachment_image_tag current_user, :profile_image, size:'200x200' %>
+<%= attachment_image_tag @user, :profile_image, size:'200x200' %>
 <table class="table">
       <tbody><tr></tr>
       <tr>
         <th>name</th>
-        <th><%= current_user.name %></th>
+        <th><%= @user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th><%= current_user.introduction %></th>
+        <th><%= @user.introduction %></th>
       </tr>
 </tbody></table>
 <div class="row">
@@ -38,7 +40,7 @@
      <%= f.text_field :title %>
 
      <h4>Opinion</h4>
-     <%= f.text_field :opinion %><br><br>
+     <%= f.text_field :body %><br><br>
 
      <%= f.submit "Create Book", class: "btn btn-primary col-xs-12 field" %>
    </div>

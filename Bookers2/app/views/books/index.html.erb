@@ -1,48 +1,4 @@
-  <div class="container">
-  <div class="row">
-  <div class="col-sm-3 sidenav">
-
-    <h2>User info</h2>
-<!--<%= attachment_image_tag @user, :profile_image %>-->
-<%= attachment_image_tag current_user, :profile_image, size:'200x200'%>
-<table class="table">
-      <tbody><tr></tr>
-      <tr>
-        <th>name</th>
-        <th><%= current_user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= current_user.introduction %></th>
-      </tr>
-</tbody></table>
-<div class="row">
-  <%= link_to edit_user_path(current_user) do %>
-  <p class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" ></p>
-  <% end %>
-</div>
-
-<% if @book.errors.any? %>
-  <div class="alert alert-warning">
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-  <h2>New Book</h2>
-  <%= form_for(@book) do |f| %>
-     <h4>Title</h4>
-     <%= f.text_field :title %>
-
-     <h4>Opinion</h4>
-     <%= f.text_area :opinion %><br><br>
-
-     <%= f.submit "Create Book", class: "btn btn-primary col-xs-12 field" %>
-   </div>
-  <% end %>
+ <%= render 'layouts/sidebar' %>
 
   <div class="col-sm-9">
     <h2>Books</h2>
@@ -57,7 +13,7 @@
       <% @books.each do |book| %>
         <tr>
           <td>
-          <%= attachment_image_tag current_user, :profile_image, size:'50x50' %>
+          <%= attachment_image_tag book.user, :profile_image, size:'50x50' %>
           </td>
           <td>
           <%= link_to book_path(book.id)  do %>
@@ -65,7 +21,7 @@
           <% end %>
           </td>
           <td>
-            <%= book.opinion %>
+            <%= book.body %>
           </td>
         </tr>
       <% end %>

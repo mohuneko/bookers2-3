@@ -4,10 +4,9 @@ Rails.application.routes.draw do
   #get 'books/new' => "books#new"
   #get 'books/edit' => "books#edit"
   get '/' => "home#top"
-  get '/users' => "books#users"
   devise_for :users
   resources :books
-  resources :users, only: [:show, :edit, :update] #変更結果を保存できるようにする
+  resources :users, only: [:show, :edit, :update, :index] #変更結果を保存できるようにする
 
 
   #devise_for :installs
