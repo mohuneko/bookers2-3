@@ -1,5 +1,7 @@
 <header class="navbar  navbar-inverse"　>
 <div class="container">
+  <div class="row"> <!--追加 -->
+    <div class="col">
    <nav class="nav navbar-nav navbar-left">
      <span class="sl">Bookers</span>
    </nav>
@@ -12,7 +14,7 @@
         <!-- <li><a class="glyphicon glyphicon-user users" href="/users"> Users</a></li> -->
         <!-- <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li> -->
         <li><%= link_to "Books", "/books", class:"glyphicon glyphicon-book books" %></li>
-        <li><%= link_to "logout", "/users/sign_out",method: :delete,  class:"glyphicon glyphicon-log-out logout" %></li>
+        <li><%= link_to "logout", "/users/sign_out",method: :delete, class:"glyphicon glyphicon-log-out logout" %></li>
         <!-- <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li> -->
     </ul>
   </nav>
@@ -20,7 +22,7 @@
     <% else %>　<!--ログアウトしているなら-->
     　　<li><%= link_to "Home", "/", class:"glyphicon glyphicon-home home" %></li>
     <!-- 　　<li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li> -->
-       <li><%= link_to "About", "/", class:"glyphicon glyphicon-link about" %></li>
+       <li><%= link_to "About", "home/about", class:"glyphicon glyphicon-link about" %></li>
        <!-- <li><a class="glyphicon glyphicon-link about" href="/"> About</a></li> -->
        <li><%= link_to "sign up", "/users/sign_up", class:"glyphicon glyphicon-edit sign_up" %></li>
        <!-- <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li> -->
