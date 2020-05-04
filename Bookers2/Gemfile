@@ -66,7 +66,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'#ファイルをアップロードできるようにするgem
 gem "refile-mini_magick" #アップロードした画像のリサイズができる
-gem 'bootstrap-sass', '~> 3.3.6' #bootstrap
+gem 'bootstrap-sass', '~> 3.4.1' #bootstrap
 gem 'jquery-rails'
 gem 'pry-rails'
 gem 'kaminari','~> 1.1.1'
